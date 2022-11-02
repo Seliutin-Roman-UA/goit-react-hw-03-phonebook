@@ -12,4 +12,10 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+
+  flex-direction: column;
+  display: flex;
+  margin-bottom: 8px;
+  width: 250px;
+  
 }
