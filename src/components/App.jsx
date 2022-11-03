@@ -43,8 +43,7 @@ export class App extends Component {
 
   componentDidMount() {
     try {
-      const localStorageData = localStorage.getItem(keyLS);
-      console.log('localStorage.getItem(keyLS)', localStorageData);
+      const localStorageData = localStorage.getItem(keyLS);   
       if (localStorageData) this.setState({ contacts: JSON.parse(localStorageData) });
       } catch (error) {
       console.error('I am so sory. Shit happens: ', error.message);
@@ -52,11 +51,8 @@ export class App extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    console.log(
-      'change LS',
-      prevState.contactsate !== this.state.contacts
-    );
-    if (prevState.contactsate !== this.state.contacts)
+
+    if (prevState.contacts !== this.state.contacts)
       localStorage.setItem(keyLS, JSON.stringify(this.state.contacts));
   }
 
